@@ -24,7 +24,6 @@ def create_table(connection):
         "interior"   FLOAT,
         "MSRP"       TEXT NOT NULL,
         FOREIGN KEY (brandID) REFERENCES brand(brandID)
-        
         );
     '''
 
@@ -35,50 +34,8 @@ def create_table(connection):
         "Brand"      TEXT NOT NULL
         );
     '''
-#FOREIGN KEY (CarID) REFERENCES car(CarID)
-    # create_movie = '''
-    # CREATE TABLE IF NOT EXISTS "movie" (
-    #     "ID"        INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-    #     "Movie"     TEXT NOT NULL,
-    #     "MovieID"   INTEGER,
-    #     "Genre"     TEXT NOT NULL,
-    #     "Country"   TEXT NOT NULL,
-    #     "Star"      FLOAT NOT NULL,
-    #     "Language"  TEXT NOT NULL,
-    #     "Date"      DATE NOT NULL,
-    #     "Budget"    FLOAT,
-    #     "USA_Gross" FLOAT,
-    #     "World_Gross" FLOAT
-    #     );
-    # '''
-    # create_cast = '''
-    # CREATE TABLE IF NOT EXISTS "cast" (
-    #     "ID"        INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-    #     "Casts"      TEXT NOT NULL,
-    #     "MovieID"     INTEGER,
-    #     FOREIGN KEY (MovieID) REFERENCES movie(MovieID)
-    #     );
-    # '''
-    # create_director = '''
-    # CREATE TABLE IF NOT EXISTS "director" (
-    #     "ID"        INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-    #     "Directors"      TEXT NOT NULL,
-    #     "MovieID"     INTEGER,
-    #     FOREIGN KEY (MovieID) REFERENCES movie(MovieID)
-    #     );
-    # '''
-    # create_writer = '''
-    # CREATE TABLE IF NOT EXISTS "writer" (
-    #     "ID"        INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-    #     "Writers"      TEXT NOT NULL,
-    #     "MovieID"     INTEGER,
-    #     FOREIGN KEY (MovieID) REFERENCES movie(MovieID)
-    #     );
-    # '''
     cur.execute(create_car)
     cur.execute(create_brand)
-    # cur.execute(create_director)
-    # cur.execute(create_writer)
     connection.commit()
 
 
@@ -114,9 +71,6 @@ def insert_data(data, conn):
         interior = float(d['interior'][:3])
         print(interior)
         MSRP = d['MSRP']
-        # car_list_ = [name, i+1, type_of_car, seating, city, highway,
-        #              drivetrain, horsepower, overallrating, safety,
-        #              performance, interior, MSRP]
         car_list_ = [name, brand, type_of_car, seating, 
                     city, highway, drivetrain, horsepower, 
                     overallrating, safety, performance, interior, MSRP]

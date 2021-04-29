@@ -191,24 +191,3 @@ if __name__ == "__main__":
     for i, key in enumerate(CAR_URL_DICT.keys()):
         print(i, key)
         get_cars_instance(key)
-    
-    
-    
-    # MOVIE_URL_DICT = open_cache(CAR_CACHE_FILENAME)
-    # l = get_car_url_dict()
-    # # for a in l:
-    # #     print(a, l[a])
-    # g = get_cars_instance("2021 Honda CR-V")
-    # # r = requests.get(url = "https://cars.usnews.com/", allow_redirects=True)
-
-    # # headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'}
-    # headers = {'User-Agent': 'Mozilla/5.0'}
-    # url = "https://cars.usnews.com/cars-trucks/rankings/compact-suvs/"
-    # r = requests.get(url, headers = headers)
-    # open('./cache/car_list.html', 'wb').write(r.content)
-
-    # f = open("./cache/car_list.html")
-    # html_text = f.read()
-    # soup = BeautifulSoup(html_text, 'html.parser')
-    # all_cars_list = soup.find(id = "full-rankings")
-    # print(all_cars_list)

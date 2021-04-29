@@ -20,15 +20,6 @@ def query_sql(query):
     return result
 
 
-# def element_wraper(c, d, w):
-#     ls = []
-#     for i in range(len(c)):
-#         director = " " if i >= len(d) else d[i]
-#         writer = " " if i >= len(w) else w[i]
-#         ls.append(Element(director, writer, c[i]))
-#     return ls
-
-
 # def create_plot(x, y, func):
 #     df = pd.DataFrame({'x': x, 'y': y})  # creating a sample dataframe
 
