@@ -23,14 +23,14 @@ def create_table(connection):
         "Performance"FLOAT,
         "interior"   FLOAT,
         "MSRP"       TEXT NOT NULL,
-        FOREIGN KEY (brandID) REFERENCES brand(brandID)
+        FOREIGN KEY (brandID) REFERENCES car
         );
     '''
 
 
     create_brand = '''
     CREATE TABLE IF NOT EXISTS "brand" (
-        "brandID"         INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+        "brandID"    INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
         "Brand"      TEXT NOT NULL
         );
     '''

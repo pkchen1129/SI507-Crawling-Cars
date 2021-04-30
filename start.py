@@ -9,16 +9,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # return '<h1>Welcome!</h1>'
-    # path = request.form['path']
-    # func(path)
-    # func_2()
-    # image = [i for i in os.listdir('static/images') if i.endswith('.jpg')][0]
     return render_template('home.html')
 
 
 @app.route('/cars', methods=["POST", "GET"])
 def cars():
+    # name = [i[0] for i in query_sql("SELECT Car FROM car")]
+    # if request.method == "POST":
+    #     select = request.form.get('car_name')
+    #     if select is not None:
+    #         select_ = select
+    #         select = "\""+select+"\""
+    #         q = "select Casts from movie M join cast C ON M.MovieID=C.movieID AND M.movie={} ".format(select) 
     return render_template('car_list_page.html')
 
 
@@ -27,14 +29,3 @@ def cars():
 
 if __name__ == '__main__':  
     app.run(debug=True)
-
-
-
-
-    # if request.method == 'GET':  # 请求方式是get
-    #     return render_template('register.html')  # 返回模板
-    # elif request.method == 'POST':
-    #     name = request.form.get('name')  # form取post方式参数
-    #     age = request.form.get('age')
-    #     hobby = request.form.getlist('hobby')  # getlist取一键多值类型的参数
-    #     return "姓名：%s 年龄：%s 爱好：%s" % (name, age, hobby)
